@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function perfectnum(num){
+            let sum=0;
+            var i=0;
+            for(i=0;i<num;i++){
+                if(num%i==0){
+                    sum=sum+i;
+                }
+            }
+            if(sum==num){
+                document.write("given number is a perfect number");
+            }
+            else{
+                document.write("given number is not a perfect number");
+            }
+        }
+       
+        
+    </script>
+    <script>
+        function factorial(n){
+            var fact=1;
+            let i=1;
+            do{
+                fact=fact*i;
+                i++;
+            }while(n>=i)
+            document.write(fact);
+        }
+    </script>
+   <script>
+    function fib(num1){
+        f1 = 0, f2 = 1, nextTerm = 0;
+        document.write(f1 +" "+f2 +" ");
+         nextTerm = f1 + f2;
+
+    while(0<num1) {
+          document.write(nextTerm + " ");
+          f1 = f2;
+          f2 = nextTerm;
+          nextTerm = f1 + f2;
+          num1--;
+}
+}
+       
+    
+    </script>
+    <script>
+        function gender(gen)
+        gen='male';
+    </script>
+     <button type="button" onclick="perfectnum(8)">Perfect number</button>
+     <button type="button" onclick="factorial(5)">Factorial</button>
+     <button type="button" onclick="fib(10)">fibnaci</button>
+</body>
+</html>
