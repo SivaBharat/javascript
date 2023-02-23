@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script type>
+        function displayDetails() {
+            var Name = document.getElementById("Name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var gender = document.getElementById("gender").value;
+            var details = "Name: " + Name + "<br>" +
+                          "Email: " + email + "<br>" +
+                          "Password: " + password + "<br>" +
+                          "Gender: " + gender + "<br>" ;
+                          document.getElementById("display").innerHTML = details;
+        }
+    </script>
+</head>
+<body>
+    <legend>Details</legend>
+    <form>
+        <fieldset>
+        <label for="Name">Name:</label>
+        <input type="text" id="Name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password"><br><br>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="gender" name="gender" value="Male">Male
+        <input type="radio" id="gender" name="gender" value="Female">Female<br><br>
+        <label for="position">Position:</label>
+        <input type="button" value="Submit" onclick="displayDetails()">
+        </fieldset>
+    </form>
+    <div id="display"></div>
+</body>
+</html>
