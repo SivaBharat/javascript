@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        function validation() {
+            var user_name = document.validate.user.value;
+            var pass_word = document.validate.pass.value;
+            var confirm_pw = document.validate.confirm.value;
+
+            var name_check = /^[A-Za-z' ']+$/;
+            var pw_check = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+
+            if (user_name == '') {
+                alert('Please enter your name');
+            }
+            else if (!name_check.test(user_name)) {
+                alert("Enter valid user name");
+            }
+            else if (pass_word == '') {
+                alert('Please enter password');
+            }
+            else if (!pw_check.test(pass_word)) {
+                alert('Enter valid password');
+            }
+            else if (pass_word != confirm_pw) {
+                alert('Password not Matched');
+            }
+            else if (pass_word.length < 8) {
+                alert('Enter atleast 8 characters');
+            }
+            else if (pass_word.length > 15) {
+                alert('Enter within 15 characters');
+            }
+            else {
+                alert('Thanks for login!');
+               
+             window.location="file:///D:/js/formValidate.html"   ;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" name="validate" method="post">
+        <fieldset>
+            <legend style="text-align: center;">Validation Form</legend>
+            <label>User Name</label><br>
+            <input type="text" name="user" placeholder=" enter username">
+            <br>
+            <label>Password</label><br>
+            <input type="password" name="pass" placeholder="enter  password">
+            <br>
+            <label> Confirm Password</label><br>
+            <input type="password" name="confirm" placeholder="enter  password">
+            <br><br>
+            <button type="button" onclick="validation()">Next</button>
+            <input type="reset" value="Clear Form" class="button">
+        </fieldset>
+    </form>
+</body>
+
+</html>

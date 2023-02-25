@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <script>
+        function vote(){
+            var first=document.form.fn.value;
+            var last=document.form.ln.value;
+            var gen=document.form.gender.value;
+            var date=document.form.dob.value;             
+            if(first == ''){
+                alert('entert the first name');
+            }
+            else if(last == ''){
+                alert('enter the last name');
+            }
+            else if(gen == ''){
+                alert('Please select your gender');
+            }
+            else if(date == ''){
+                alert('Please select your date of brith'); 
+            }
+            else {
+                var dobDate = new Date(date);
+                var todayDate = new Date();
+                var age = todayDate.getFullYear() - dobDate.getFullYear();
+                var m = todayDate.getMonth() - dobDate.getMonth();
+                if (m < 0 || (m === 0 && todayDate.getDate() < dobDate.getDate())) {
+                    age--;
+                }
+                if (age >= 18) {
+                    alert(first + " " + last + "  age  " + age + " ,you are able to vote this year");
+                } else {
+                    alert(first + " " + last + "  age  " + age + ", you have to wait to reach 18 years");
+                }
+                return true;
+            }
+            
+        }
+        
+           
+        
+    </script>
+</head>
+<body>
+    <legend>Details</legend>
+    <form action="" name="form" method="post">
+        <fieldset>
+        <label>FirstName</label><br>
+        <input type="text" name="fn"><br>
+        <label >LastName</label><br>
+        <input type="text" name="ln"><br>
+        <label >Gender</label><br>
+        <input type="radio" name="gender"  value="Male">Male
+        <input type="radio" name="gender"  value="Female">Female<br><br>
+        <label>DOB</label><br>
+        <input type="date" name="dob"><br>
+        <input type="button" value="Submit" onclick="vote()">
+        </fieldset>
+    </form>
+    
+</body>
+</html>
